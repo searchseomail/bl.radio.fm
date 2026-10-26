@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One — Агентство недвижимости в Болгарии | Солнечный Берег</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f1f38;
+            --accent: #c5a880;
+            --accent-hover: #b09166;
+            --text-main: #2b2b2b;
+            --text-light: #6c757d;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-contacts a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .header-contacts a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(15, 31, 56, 0.75), rgba(15, 31, 56, 0.75)), 
+                        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .rating-badge .stars {
+            color: #ffc107;
+            margin: 0 8px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* FEATURES / SERVICES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 35px 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* REVIEWS */
+        .reviews-section {
+            background-color: var(--bg-light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .reviewer-info h4 {
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        .reviewer-info span {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: var(--text-main);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .google-verified {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #4285F4;
+            font-weight: 500;
+        }
+
+        /* CONTACT & INFO */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: var(--bg-light);
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-row i {
+            font-size: 20px;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .info-row h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .info-row p, .info-row a {
+            color: var(--text-light);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .info-row a:hover {
+            color: var(--accent);
+        }
+
+        .badge-friendly {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+            font-size: 13px;
+            margin-top: 10px;
+            color: var(--primary);
+        }
+
+        .map-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 380px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .header-contacts { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">ONE<span>.</span></a>
+            <div class="header-contacts">
+                <a href="tel:+359886763545"><i class="fa-solid fa-phone"></i> +359 88 676 3545</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+        <div class="container">
+            <div class="rating-badge">
+                <span>Google Рейтинг</span>
+                <span class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <strong>5.0 / 5.0</strong>
+            </div>
+            <h1>Агентство недвижимости «One»</h1>
+            <p>Ваш надежный проводник на рынке курортной и жилой недвижимости в Болгарии. Подбор объектов, полное юридическое сопровождение и индивидуальный подход.</p>
+            <div class="hero-btns">
+                <a href="tel:+359886763545" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Позвонить нам</a>
+                <a href="https://www.instagram.com/neboss.rea" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-instagram"></i> Наш Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему выбирают «One»</h2>
+                <p>Профессиональный сервис на побережье Солнечного Берега</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                    <h3>Точный подбор</h3>
+                    <p>Найдем лучшие квартиры, апартаменты и виллы строго под ваш бюджет и цели — для отдыха или инвестиций.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Быстрые сделки</h3>
+                    <p>Берем на себя проверку документов и организацию оформления. Все процессы проходят прозрачно и гладко.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Локальный опыт</h3>
+                    <p>Знаем рынок Солнечного Берега изнутри: поможем выбрать ликвидный комплекс с адекватной таксой поддержки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы из Google Maps -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы клиентов</h2>
+                <p>Реальные впечатления из нашего профиля Google Maps</p>
+            </div>
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-header">
+                            <div class="avatar">НП</div>
+                            <div class="reviewer-info">
+                                <h4>Наталья Полупанова</h4>
+                                <span>Клиент</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">«Спасибо сотрудникам агентства, показали хорошие варианты и помогли определиться с выбором. Сделка прошла легко и быстро.»</p>
+                    </div>
+                    <div class="google-verified">
+                        <i class="fa-brands fa-google"></i> Проверенный отзыв с Google Карт
+                    </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-header">
+                            <div class="avatar">ВК</div>
+                            <div class="reviewer-info">
+                                <h4>Валерія Кириченко</h4>
+                                <span>Местный эксперт (Local Guide)</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">«Спасибо за помощь в подборе недвижимости. Всё прошло отлично! 👍🏻»</p>
+                    </div>
+                    <div class="google-verified">
+                        <i class="fa-brands fa-google"></i> Проверенный отзыв с Google Карт
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и Карта -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты и офис</h2>
+                <p>Будем рады видеть вас у нас в офисе</p>
+            </div>
+            <div class="contact-grid">
+                <!-- Контактная информация -->
+                <div class="contact-card">
+                    <div class="info-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Адрес офиса</h4>
+                            <p>Slanchev Bryag, 1-va, 8240 Sunny Beach, Bulgaria</p>
+                            <small style="color:#888;">Плюс-код: MPJ4+28 Солнечный Берег</small>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+359886763545">+359 88 676 3545</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <i class="fa-brands fa-instagram"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p><a href="https://www.instagram.com/neboss.rea" target="_blank" rel="noopener noreferrer">@neboss.rea</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <h4>Часы работы</h4>
+                            <p>Понедельник – Пятница: <strong>09:00 – 18:00</strong></p>
+                            <p>Суббота – Воскресенье: <strong>Выходной</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="badge-friendly">
+                        <i class="fa-solid fa-shield-heart" style="color: #e83e8c;"></i> LGBTQ+ friendly пространство
+                    </div>
+                </div>
+
+                <!-- Встроенная Google карта -->
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=42.6951,27.7086&hl=ru&z=15&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Агентство недвижимости «One». Все права защищены. Sunny Beach, Bulgaria.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
